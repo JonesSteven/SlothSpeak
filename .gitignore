@@ -1,0 +1,50 @@
+# Built outputs
+*.apk
+*.aab
+/build
+/app/build
+/captures
+
+# Gradle
+.gradle
+/.gradle
+
+# IDE
+*.iml
+/.idea
+*.swp
+*.swo
+*~
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Local configuration
+local.properties
+.externalNativeBuild
+.cxx
+
+# Environment and secrets
+.env
+.env.*
+*.keystore
+*.jks
+keystore.properties
+signing.properties
+secrets.properties
+google-services.json
+
+# Personal notes and reference docs
+/*.md
+!/README.md
+!/future.md
+!/LICENSE.md
+!/CONTRIBUTING.md
+!/SECURITY.md
+
+# Loose media files in repo root (not app resources)
+/*.wav
+/*.mp3
