@@ -547,7 +547,7 @@ fun SettingsScreen(
                     ProviderHeader("OpenAI")
 
                     ModelOption(
-                        title = "GPT-5.2",
+                        title = "GPT-5.5",
                         description = "Excellent quality, fast responses, lower cost.",
                         selected = state.selectedModel == ApiKeyManager.MODEL_STANDARD,
                         onClick = { viewModel.setModel(ApiKeyManager.MODEL_STANDARD) }
@@ -556,7 +556,7 @@ fun SettingsScreen(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     ModelOption(
-                        title = "GPT-5.2 Pro",
+                        title = "GPT-5.5 Pro",
                         description = "Maximum reasoning, highest quality answers. Slower and more expensive.",
                         selected = state.selectedModel == ApiKeyManager.MODEL_PRO,
                         onClick = { viewModel.setModel(ApiKeyManager.MODEL_PRO) }
@@ -586,6 +586,15 @@ fun SettingsScreen(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     ModelOption(
+                        title = "Gemini 3.5 Pro",
+                        description = "Google's latest flagship model. Requires separate Gemini API key.",
+                        selected = state.selectedModel == ApiKeyManager.MODEL_GEMINI_PRO_35,
+                        onClick = { viewModel.setModel(ApiKeyManager.MODEL_GEMINI_PRO_35) }
+                    )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    ModelOption(
                         title = "Gemini Deep Research",
                         description = "Multi-minute deep web research. Uses Gemini API key.",
                         selected = state.selectedModel == ApiKeyManager.MODEL_GEMINI_DEEP_RESEARCH,
@@ -610,7 +619,7 @@ fun SettingsScreen(
                     ProviderHeader("xAI")
 
                     ModelOption(
-                        title = "Grok 4",
+                        title = "Grok 4.3",
                         description = "xAI's most capable model. Requires separate xAI API key.",
                         selected = state.selectedModel == ApiKeyManager.MODEL_GROK,
                         onClick = { viewModel.setModel(ApiKeyManager.MODEL_GROK) }
@@ -659,8 +668,9 @@ fun SettingsScreen(
                 }
             }
 
-            // Thinking Level (only for Gemini model)
-            if (state.selectedModel == ApiKeyManager.MODEL_GEMINI_PRO) {
+            // Thinking Level (only for Gemini models)
+            if (state.selectedModel == ApiKeyManager.MODEL_GEMINI_PRO ||
+                state.selectedModel == ApiKeyManager.MODEL_GEMINI_PRO_35) {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 SectionHeader("Thinking Level")

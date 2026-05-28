@@ -22,7 +22,7 @@ There is no server backend. The app calls AI provider APIs directly from the dev
 
 ## Features
 
-**Multi-provider AI** — Four providers, seven models. Switch between OpenAI GPT-5.2, Gemini 3.1 Pro, Claude Opus 4.8, and Grok 4. GPT-5.2 Pro, Gemini, and Claude support configurable reasoning effort/thinking level.
+**Multi-provider AI** — Four providers, eight models. Switch between OpenAI GPT-5.5, Gemini 3.1 Pro, Claude Opus 4.8, and Grok 4.3. GPT-5.5 Pro, Gemini, and Claude support configurable reasoning effort/thinking level.
 
 **Multi-turn conversations** — Ask follow-up questions with full context. OpenAI and Grok chain via `previous_response_id`; Gemini and Claude send explicit conversation history.
 
@@ -66,13 +66,14 @@ There is no server backend. The app calls AI provider APIs directly from the dev
 
 | Provider | Model | ID | Notes |
 |----------|-------|----|-------|
-| OpenAI | GPT-5.2 Pro | `gpt-5.2-pro` | Configurable reasoning effort (medium/high/xhigh) |
-| OpenAI | GPT-5.2 | `gpt-5.2` | Faster, no extended thinking |
+| OpenAI | GPT-5.5 Pro | `gpt-5.5-pro` | Configurable reasoning effort (medium/high/xhigh) |
+| OpenAI | GPT-5.5 | `gpt-5.5` | Faster, no extended thinking |
 | OpenAI | Deep Research | `o3-deep-research` | Async polling, extended web research |
 | Google | Gemini 3.1 Pro | `gemini-3.1-pro-preview` | Configurable thinking level (low/medium/high) |
-| Google | Gemini Deep Research | `deep-research-pro-preview-12-2025` | Async polling with Google Search |
+| Google | Gemini 3.5 Pro | `gemini-3.5-pro-preview` | Configurable thinking level (low/medium/high) |
+| Google | Gemini Deep Research | `deep-research-max-preview-04-2026` | Async polling with Google Search |
 | Anthropic | Claude Opus 4.8 | `claude-opus-4-8` | Adaptive thinking, effort (low/medium/high/max) |
-| xAI | Grok 4 | `grok-4-0709` | Optional web search and X (Twitter) search |
+| xAI | Grok 4.3 | `grok-4.3` | Optional web search and X (Twitter) search |
 
 Each provider requires its own API key, configured in Settings. All providers use OpenAI for STT and TTS, so an OpenAI API key is always required.
 

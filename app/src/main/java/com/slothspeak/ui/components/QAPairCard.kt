@@ -198,13 +198,14 @@ private fun formatTimestampWithOrdinal(timestamp: Long): String {
 
 private fun formatModelDisplay(model: String, reasoningEffort: String?): String {
     val displayName = when (model) {
-        "gpt-5.2-pro" -> "GPT 5.2 Pro"
-        "gpt-5.2" -> "GPT 5.2"
+        "gpt-5.5-pro" -> "GPT 5.5 Pro"
+        "gpt-5.5" -> "GPT 5.5"
         "gemini-3.1-pro-preview" -> "Gemini 3.1 Pro"
+        "gemini-3.5-pro-preview" -> "Gemini 3.5 Pro"
         "claude-opus-4-8" -> "Claude Opus 4.8"
-        "grok-4-0709" -> "Grok 4"
+        "grok-4.3" -> "Grok 4.3"
         "o3-deep-research" -> "Deep Research"
-        "deep-research-pro-preview-12-2025" -> "Gemini Deep Research"
+        "deep-research-max-preview-04-2026" -> "Gemini Deep Research"
         else -> model.replace("gpt-", "GPT ").replace("-", " ")
     }
     return if (reasoningEffort != null) "$displayName $reasoningEffort" else displayName

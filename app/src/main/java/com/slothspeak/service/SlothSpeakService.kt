@@ -420,7 +420,7 @@ class SlothSpeakService : Service() {
         val claudeEffort = apiKeyManager.getClaudeEffort()
         val webSearchEnabled = apiKeyManager.getWebSearchEnabled()
         val xSearchEnabled = apiKeyManager.getXSearchEnabled()
-        val isGemini = model == ApiKeyManager.MODEL_GEMINI_PRO
+        val isGemini = model == ApiKeyManager.MODEL_GEMINI_PRO || model == ApiKeyManager.MODEL_GEMINI_PRO_35
         val isClaude = model == ApiKeyManager.MODEL_CLAUDE_OPUS
         val isGrok = model == ApiKeyManager.MODEL_GROK
         val isDeepResearch = model == ApiKeyManager.MODEL_DEEP_RESEARCH
@@ -568,7 +568,7 @@ class SlothSpeakService : Service() {
                 } else {
                     emptyList()
                 }
-                val result = geminiClient.generateContent(questionText, history, thinkingLevel, webSearchEnabled)
+                val result = geminiClient.generateContent(questionText, history, thinkingLevel, webSearchEnabled, model)
                 timerJob.cancel()
                 lastLlmResponseSeconds = ((System.currentTimeMillis() - llmStartTime) / 1000).toInt()
                 lastReasoningEffort = thinkingLevel
@@ -962,7 +962,7 @@ class SlothSpeakService : Service() {
                             val claudeEffort = apiKeyManager.getClaudeEffort()
                             val webSearchEnabled = apiKeyManager.getWebSearchEnabled()
                             val xSearchEnabled = apiKeyManager.getXSearchEnabled()
-                            val isGemini = model == ApiKeyManager.MODEL_GEMINI_PRO
+                            val isGemini = model == ApiKeyManager.MODEL_GEMINI_PRO || model == ApiKeyManager.MODEL_GEMINI_PRO_35
                             val isClaude = model == ApiKeyManager.MODEL_CLAUDE_OPUS
                             val isGrok = model == ApiKeyManager.MODEL_GROK
                             val isDeepResearch = model == ApiKeyManager.MODEL_DEEP_RESEARCH
@@ -1044,7 +1044,7 @@ class SlothSpeakService : Service() {
                                 lastAnswerTextRich = null
                                 respId = result.responseId
                             } else if (isGemini) {
-                                val result = geminiClient.generateContent(question, emptyList(), thinkingLevel, webSearchEnabled)
+                                val result = geminiClient.generateContent(question, emptyList(), thinkingLevel, webSearchEnabled, model)
                                 timerJob.cancel()
                                 lastLlmResponseSeconds = ((System.currentTimeMillis() - llmStartTime) / 1000).toInt()
                                 lastReasoningEffort = thinkingLevel
@@ -1452,7 +1452,7 @@ class SlothSpeakService : Service() {
         val claudeEffort = apiKeyManager.getClaudeEffort()
         val webSearchEnabled = apiKeyManager.getWebSearchEnabled()
         val xSearchEnabled = apiKeyManager.getXSearchEnabled()
-        val isGemini = model == ApiKeyManager.MODEL_GEMINI_PRO
+        val isGemini = model == ApiKeyManager.MODEL_GEMINI_PRO || model == ApiKeyManager.MODEL_GEMINI_PRO_35
         val isClaude = model == ApiKeyManager.MODEL_CLAUDE_OPUS
         val isGrok = model == ApiKeyManager.MODEL_GROK
 
@@ -1547,7 +1547,7 @@ class SlothSpeakService : Service() {
                         .getQAPairsForConversationOnce(existingConversationId)
                         .map { it.questionText to it.answerText }
                 }
-                val result = geminiClient.generateContent(questionText, history, thinkingLevel, webSearchEnabled)
+                val result = geminiClient.generateContent(questionText, history, thinkingLevel, webSearchEnabled, model)
                 timerJob.cancel()
                 lastLlmResponseSeconds = ((System.currentTimeMillis() - llmStartTime) / 1000).toInt()
                 lastReasoningEffort = thinkingLevel

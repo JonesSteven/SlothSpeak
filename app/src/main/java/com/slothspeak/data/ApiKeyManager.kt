@@ -254,13 +254,14 @@ class ApiKeyManager(context: Context) {
             "alloy", "ash", "ballad", "coral", "echo", "fable",
             "nova", "onyx", "sage", "shimmer", "verse", "marin", "cedar"
         )
-        const val MODEL_PRO = "gpt-5.2-pro"
-        const val MODEL_STANDARD = "gpt-5.2"
+        const val MODEL_PRO = "gpt-5.5-pro"
+        const val MODEL_STANDARD = "gpt-5.5"
         const val MODEL_GEMINI_PRO = "gemini-3.1-pro-preview"
+        const val MODEL_GEMINI_PRO_35 = "gemini-3.5-pro-preview"
         const val MODEL_CLAUDE_OPUS = "claude-opus-4-8"
-        const val MODEL_GROK = "grok-4-0709"
+        const val MODEL_GROK = "grok-4.3"
         const val MODEL_DEEP_RESEARCH = "o3-deep-research"
-        const val MODEL_GEMINI_DEEP_RESEARCH = "deep-research-pro-preview-12-2025"
+        const val MODEL_GEMINI_DEEP_RESEARCH = "deep-research-max-preview-04-2026"
         const val CLAUDE_EFFORT_LOW = "low"
         const val CLAUDE_EFFORT_MEDIUM = "medium"
         const val CLAUDE_EFFORT_HIGH = "high"

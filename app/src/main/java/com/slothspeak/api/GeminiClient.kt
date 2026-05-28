@@ -59,7 +59,8 @@ class GeminiClient(private val apiKeyManager: ApiKeyManager) {
         questionText: String,
         conversationHistory: List<Pair<String, String>>,
         thinkingLevel: String,
-        webSearchEnabled: Boolean = false
+        webSearchEnabled: Boolean = false,
+        model: String = ApiKeyManager.MODEL_GEMINI_PRO
     ): GeminiLlmResult {
         // Build contents array with conversation history
         val contents = mutableListOf<GeminiContent>()
@@ -86,7 +87,7 @@ class GeminiClient(private val apiKeyManager: ApiKeyManager) {
             tools = tools
         )
 
-        val response = service.generateContent(ApiKeyManager.MODEL_GEMINI_PRO, request)
+        val response = service.generateContent(model, request)
         if (response.isSuccessful) {
             val body = response.body() ?: throw ApiException("Empty Gemini response")
             val candidates = body.candidates
