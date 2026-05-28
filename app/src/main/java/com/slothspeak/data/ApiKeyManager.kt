@@ -257,7 +257,7 @@ class ApiKeyManager(context: Context) {
         const val MODEL_PRO = "gpt-5.2-pro"
         const val MODEL_STANDARD = "gpt-5.2"
         const val MODEL_GEMINI_PRO = "gemini-3.1-pro-preview"
-        const val MODEL_CLAUDE_OPUS = "claude-opus-4-6"
+        const val MODEL_CLAUDE_OPUS = "claude-opus-4-8"
         const val MODEL_GROK = "grok-4-0709"
         const val MODEL_DEEP_RESEARCH = "o3-deep-research"
         const val MODEL_GEMINI_DEEP_RESEARCH = "deep-research-pro-preview-12-2025"

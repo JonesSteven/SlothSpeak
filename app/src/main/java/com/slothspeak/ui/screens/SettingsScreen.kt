@@ -598,7 +598,7 @@ fun SettingsScreen(
                     ProviderHeader("Anthropic")
 
                     ModelOption(
-                        title = "Claude Opus 4.6",
+                        title = "Claude Opus 4.8",
                         description = "Anthropic's most capable model with adaptive thinking. Requires separate Claude API key.",
                         selected = state.selectedModel == ApiKeyManager.MODEL_CLAUDE_OPUS,
                         onClick = { viewModel.setModel(ApiKeyManager.MODEL_CLAUDE_OPUS) }

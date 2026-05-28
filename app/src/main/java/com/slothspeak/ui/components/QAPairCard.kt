@@ -201,7 +201,7 @@ private fun formatModelDisplay(model: String, reasoningEffort: String?): String 
         "gpt-5.2-pro" -> "GPT 5.2 Pro"
         "gpt-5.2" -> "GPT 5.2"
         "gemini-3.1-pro-preview" -> "Gemini 3.1 Pro"
-        "claude-opus-4-6" -> "Claude Opus 4.6"
+        "claude-opus-4-8" -> "Claude Opus 4.8"
         "grok-4-0709" -> "Grok 4"
         "o3-deep-research" -> "Deep Research"
         "deep-research-pro-preview-12-2025" -> "Gemini Deep Research"
